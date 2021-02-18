@@ -1,0 +1,594 @@
+{% load static  %}
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+     <script src="http://dir.by/example_lib/jquery/jquery-3.3.1.min.js"></script>
+
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+
+    <title>Home</title>
+</head>
+<body id='menu'>
+
+  <div class="page">
+    <!-- Header -->
+
+    <header class="header ">
+      <div class="header__left">
+        <nav class="nav">
+            <ul class="nav__list">
+              <li class="center-img">
+      <img class='nav__img__logo'src="https://img.icons8.com/nolan/64/gas-station.png"/>
+              </li>
+              <li class="nav__item">
+                <a  class="nav__link" href="/">Головна</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link has-subnav" href="/#servic">Послуги</a>
+                <ul class="sub-nav">
+
+                    <li>
+
+{% for product in serv %}
+ <a  class='sub-nav__link' href="{{ product.get_absolute_url }}">{{ product.title }} </a>
+{% endfor %}
+
+                 </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="/#rew">Відгуки</a>
+              </li>
+              <li class="nav__item">
+
+                <a class="nav__link" href="{% url 'select_car' %}">Перевірено</a>
+
+              </li>
+            </ul>
+        </nav>
+
+
+      </div>
+
+      <div class="header__right">
+        <nav class="nav">
+            <ul class="nav__list-right">
+              <li class="nav__item-tel">
+                <p class="nav__right"><a class='tel-link' href="tel:+380507151254">+38 (050) 715 12 54</a></p>
+              </li>
+              <li class="nav__item">
+                <a  class="nav-img-logo" href="#" >
+                                                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5rem" height="5rem" viewBox="0 0 30 30" xml:space="preserve">
+                                                      <desc>Instagram</desc>
+                                                      <path style="fill:#A250BE;" d="M15,11.014 C12.801,11.014 11.015,12.797 11.015,15 C11.015,17.202 12.802,18.987 15,18.987 C17.199,18.987 18.987,17.202 18.987,15 C18.987,12.797 17.199,11.014 15,11.014 L15,11.014 Z M15,17.606 C13.556,17.606 12.393,16.439 12.393,15 C12.393,13.561 13.556,12.394 15,12.394 C16.429,12.394 17.607,13.561 17.607,15 C17.607,16.439 16.444,17.606 15,17.606 L15,17.606 Z"></path>
+                                                      <path style="fill:#A250BE;" d="M19.385,9.556 C18.872,9.556 18.465,9.964 18.465,10.477 C18.465,10.989 18.872,11.396 19.385,11.396 C19.898,11.396 20.306,10.989 20.306,10.477 C20.306,9.964 19.897,9.556 19.385,9.556 L19.385,9.556 Z"></path>
+                                                      <path style="fill:#A250BE;" d="M15.002,0.15 C6.798,0.15 0.149,6.797 0.149,15 C0.149,23.201 6.798,29.85 15.002,29.85 C23.201,29.85 29.852,23.202 29.852,15 C29.852,6.797 23.201,0.15 15.002,0.15 L15.002,0.15 Z M22.666,18.265 C22.666,20.688 20.687,22.666 18.25,22.666 L11.75,22.666 C9.312,22.666 7.333,20.687 7.333,18.28 L7.333,11.734 C7.333,9.312 9.311,7.334 11.75,7.334 L18.25,7.334 C20.688,7.334 22.666,9.312 22.666,11.734 L22.666,18.265 L22.666,18.265 Z"></path>
+                                                  </svg>
+                                              </a>
+     </li>
+              <li class="nav__item">
+
+        <a  class="nav-img-logo" href="#" >
+                                           <svg style="fill:#A250BE;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5rem" height="5rem" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+                                               <path d="M47.761,24c0,13.121-10.638,23.76-23.758,23.76C10.877,47.76,0.239,37.121,0.239,24c0-13.124,10.638-23.76,23.764-23.76
+    C37.123,0.24,47.761,10.876,47.761,24 M20.033,38.85H26.2V24.01h4.163l0.539-5.242H26.2v-3.083c0-1.156,0.769-1.427,1.308-1.427
+    h3.318V9.168L26.258,9.15c-5.072,0-6.225,3.796-6.225,6.224v3.394H17.1v5.242h2.933V38.85z" />
+                                           </svg>
+                                       </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav-img-logo" href="#" >
+                                                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="5rem" height="5rem" viewBox="-455 257 48 48" enable-background="new -455 257 48 48" xml:space="preserve">
+                                                       <path style="fill:#A250BE;" d="M-431,257.013c13.248,0,23.987,10.74,23.987,23.987s-10.74,23.987-23.987,23.987s-23.987-10.74-23.987-23.987
+       S-444.248,257.013-431,257.013z M-419.185,275.093c-0.25-1.337-1.363-2.335-2.642-2.458c-3.054-0.196-6.119-0.355-9.178-0.357
+       c-3.059-0.002-6.113,0.154-9.167,0.347c-1.284,0.124-2.397,1.117-2.646,2.459c-0.284,1.933-0.426,3.885-0.426,5.836
+       s0.142,3.903,0.426,5.836c0.249,1.342,1.362,2.454,2.646,2.577c3.055,0.193,6.107,0.39,9.167,0.39c3.058,0,6.126-0.172,9.178-0.37
+       c1.279-0.124,2.392-1.269,2.642-2.606c0.286-1.93,0.429-3.879,0.429-5.828C-418.756,278.971-418.899,277.023-419.185,275.093z
+       M-433.776,284.435v-7.115l6.627,3.558L-433.776,284.435z" />
+                                                   </svg>
+                                               </a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+  <button class="burger" id='headerToggle'>
+      <span></span>
+  </button>
+    </header>
+    {% block content %}
+
+    <div class="img_top">
+
+        <div class="order-form">
+    <div class="left-ord">
+
+      <p class="m-t">Автопідбір </p>
+      <p class="mi-t">Buyright Inc</p>
+      <p class="b-t">Шукаєте авто з пробігом? Ми допоможемо зробити правильний вибір!</p>
+      <p class="b-t">Підберемо якісне авто за вашими параметрами.</p>
+    </div>
+    <div class="right-ord">
+            <form action="{% url 'make_order' %}" method="POST">
+             {% csrf_token %}
+
+
+      <div class="form">
+        <div class="r-top-text">
+          <p class="p-t">і з вами зв'яжеться</p>
+        <h1 class="t-t">Напишіть нам</h1>
+         <p class="p-t">наш менеджер</p>
+        </div>
+        <div class="r-form">
+          <div class="Wrapper">
+        <div class="Input">
+          <input type="text" name='name' id="input" required class="Input-text" placeholder="Ваше Ім'я ">
+          <label for="input" class="Input-label">Ім'я</label>
+        </div>
+      </div>
+      <div class="Wrapper">
+    <div class="Input">
+      <input type="text" name='phone' id="phone1" required class="Input-text" placeholder="Ваш номер телефона ">
+      <label for="input" class="Input-label">Номер телефона</label>
+    </div>
+
+  </div>
+  <div class="Wrapper">
+<div class="Input">
+  <input type="text" name='comment' id="input" required class="Input-text" placeholder="Додаткові коментарі ">
+  <label for="input" class="Input-label">Коментарі</label>
+</div>
+</div>
+
+             </div>
+        <div class="r-btn">
+          <button class="btn-ord" type="submit" name="button">Надіслати </button>
+
+
+<p class='w-t'>*Натискаючи на кнопку,
+   Ви даєте згоду на обробку персональних
+   даних та погоджуєтеся з політикою конфіденційності.</p>
+        </div>
+
+      </div>
+          </form>
+    </div>
+  </div>
+    </div>
+
+<div class="container">
+  <div class="container-text-inc" >
+Перевіряємо
+  </div>
+  <div class="slider3">
+    <div class="slider__wrapper">
+      <div class="slider__items">
+        <div class="slider__item3">
+
+
+<div class="title-div">
+
+  <div class="title-img">
+    <button type="button" class="button-title one"
+    data-tooltip="Перевірка кузова на предмет перефарбованих або замінених деталей">
+  </button>
+  </div>
+  <div class="title-img">
+    <button type="button" class="button-title two"
+    data-tooltip="Перевірка відповідності показників одометра реальному пробігу">
+  </button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title three"
+  data-tooltip="Перевірка стану двигуна. Замір компресії, ендоскопія">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title four"
+  data-tooltip="Перевірка рівня робочої рідини, комп'ютерна діагностика. Тест-драйв">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title five"
+  data-tooltip="Перевірка стану амортизаторів та інших елементів ходової частини">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title six"
+  data-tooltip="Перевірка правильної роботи бортового комп'ютера та всіх електронних систем">
+</button>
+</div>
+
+</div>
+        </div>
+        <div class="slider__item3">
+
+
+<div class="title-div">
+
+  <div class="title-img">
+    <button type="button" class="button-title seven"
+    data-tooltip="Перевірка тиску надуву, стану турбіни, огляд на предмет підтікання масла">
+  </button>
+  </div>
+  <div class="title-img">
+    <button type="button" class="button-title eight"
+    data-tooltip="Перевірка наявності та справності подушок безпеки">
+  </button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title nine"
+  data-tooltip="Перевірка наявності каталізатора, сажевого фільтра та його стану">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title ten"
+  data-tooltip="Первірка стану рульової рейки, наявність стуків і люфтів">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title el"
+  data-tooltip="Перевірка стану гальмівних колодок, дисків, супортів. Перевірка систем стабілізації">
+</button>
+</div>
+<div class="title-img">
+  <button type="button" class="button-title twelw"
+  data-tooltip="Перевірка наявності арештів та обтяжень на авто. Перевірка на предмет розшуку.">
+</button>
+</div>
+
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+    <a class="slider__control slider__control_next slider__control_show" href="#" role="button"></a>
+  </div>
+</div>
+
+      <div class="services">
+      <div class="container-text"id="servic">
+      Наші послуги
+      </div>
+
+      <div class='main-services-container'>
+      {% for product in serv %}
+        <div class="services-container">
+          <img class="cn-img" src="{{ product.images.url }}" alt="Зображення {{ product.title }}">
+          <div class="serv-title">
+              <div class="text">
+            <p class="sr-t-t">{{ product.title }}</p>
+            <p class="sr-t-m">{{ product.services_desc }}</p>
+            </div>
+            <div class="button-serv-div">
+                <a  class="btn-a" href="{{ product.get_absolute_url }}"><button class="btn-serv" type="button" name="button">Детальніше </button></a>
+
+            </div>
+
+        </div>
+        </div>
+               {% endfor %}
+      </div>
+
+    </div>
+          <div class="include-serv">
+      <div class="container-text-inc">
+    Всі послуги включають в себе
+      </div>
+      <div class="container-inc">
+        <div class="inc-content">
+          <div class="inc-img">
+        <img class="inc-logo" src="{% static 'images/inc1.png' %}" alt="">
+          </div>
+          <div class="inc-text">
+            Професійну перевірку автомобіля
+    та документів
+
+          </div>
+        </div>
+        <div class="inc-content">
+          <div class="inc-img">
+        <img class="inc-logo" src="{% static 'images/inc2.png' %}" alt="">
+          </div>
+          <div class="inc-text">
+          Аргументований торг з продавцем
+
+
+          </div>
+        </div>
+        <div class="inc-content">
+          <div class="inc-img">
+        <img class="inc-logo" src="{% static 'images/inc3.png' %}" alt="">
+          </div>
+          <div class="inc-text">
+            Консультації по всім питанням,
+пов'язаним з купівлею авто
+
+
+          </div>
+        </div>
+        <div class="inc-content">
+          <div class="inc-img">
+        <img class="inc-logo" src="{% static 'images/inc4.png' %}" alt="">
+          </div>
+          <div class="inc-text">
+           Уважне ставлення до ваших
+ побажань та вимог до авто
+
+
+          </div>
+        </div>
+
+    </div>
+    </div>
+      <div class="img_mid">
+  <div class="order-form">
+    <div class="left-ord">
+
+
+      <p class="mi-t">Залиште заявку</p>
+      <p class="b-t">і ми підберемо для вас краще авто </p>
+
+    </div>
+
+
+          <div class="right-ord">
+            <form action="{% url 'make_order' %}" method="POST">
+             {% csrf_token %}
+
+
+      <div class="form">
+        <div class="r-top-text">
+          <p class="p-t">і з вами зв'яжеться</p>
+        <h1 class="t-t">Напишіть нам</h1>
+         <p class="p-t">наш менеджер</p>
+        </div>
+        <div class="r-form">
+          <div class="Wrapper">
+        <div class="Input">
+          <input type="text" name='name' id="input" required class="Input-text" placeholder="Ваше Ім'я ">
+          <label for="input" class="Input-label">Ім'я</label>
+        </div>
+      </div>
+      <div class="Wrapper">
+    <div class="Input">
+      <input type="text" name='phone' id="phone2" required class="Input-text" placeholder="Ваш номер телефона ">
+      <label for="input" class="Input-label">Номер телефона</label>
+    </div>
+
+  </div>
+  <div class="Wrapper">
+<div class="Input">
+  <input type="text" name='comment' id="input" required class="Input-text" placeholder="Додаткові коментарі ">
+  <label for="input" class="Input-label">Коментарі</label>
+</div>
+</div>
+
+             </div>
+        <div class="r-btn">
+          <button class="btn-ord" type="submit" name="button">Надіслати </button>
+
+
+<p class='w-t'>*Натискаючи на кнопку,
+   Ви даєте згоду на обробку персональних
+   даних та погоджуєтеся з політикою конфіденційності.</p>
+        </div>
+
+      </div>
+          </form>
+    </div>
+
+
+
+
+  </div>
+
+</div>
+   <div class='garant-cont'>
+      <div class="container-text-inc">
+    Ми надаємо такі гарантії
+      </div>
+      <div class="rewiews-container">
+        <div class="garant">
+          <div class="garant-img">
+        <img class="garant-logo" src="{% static 'images/gr1.png' %}" alt="">
+          </div>
+          <div class="garant-text">
+        <h1 class='gr-tx-top'>Гарантія юридичної чистоти</h1>
+        <p class='gr-tx-bt'>Ви купляєте автомобіль  без арештів та юридичних обтяжень
+      </p>
+
+
+          </div>
+        </div>
+        <div class="garant">
+          <div class="garant-img">
+        <img class="garant-logo" src="{% static 'images/gr2.png' %}" alt="">
+          </div>
+          <div class="garant-text">
+        <h1 class='gr-tx-top'>Гарантія технічної відповідності</h1>
+        <p class='gr-tx-bt'>Ви повністю проінформовані про технічний стан автомобіля</p>
+
+
+          </div>
+        </div>
+        <div class="garant">
+          <div class="garant-img">
+        <img class="garant-logo" src="{% static 'images/gr3.png' %}" alt="">
+          </div>
+          <div class="garant-text">
+        <h1 class='gr-tx-top'>Гарантія повернення коштів</h1>
+        <p class='gr-tx-bt'>Якщо ми не зможемо знайти потрібне авто, повернемо 100% передоплати
+
+      </p>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="rewiews-cont">
+      <div class="container-text-inc " id="rew">
+    Наші відгуки
+      </div>
+
+
+
+        <div class="slider">
+          <div class="slider__wrapper">
+            <div class="slider__items">
+                   {% for product in reviews %}
+
+              <div class="slider__item">
+                <div class="rw-content">
+                  <div class="rw-tx">
+                    <h1 class="rw-tx-top">
+                Послуга " {{ product.services }}"<br>
+                 <br>{{ product.reviews }}
+              </h1>
+              <p class="rw-tx-bt">{{ product.car }}   {{ product.order }}</p>
+                  </div>
+                  <div class="rw-ph-div">
+                    <img class="rw-ph" src="{{ product.images.url }}" alt="">
+
+                  </div>
+                </div>
+              </div>
+                    {% endfor %}
+            </div>
+          </div>
+          <a class="slider__control slider__control_prev" href="#" role="button"></a>
+          <a class="slider__control slider__control_next slider__control_show" href="#" role="button"></a>
+
+        </div>
+
+    <div class="ord-modal-form">
+      <div class="left-modal-text">
+
+        <h1 class="left-modal-text-size">Залиште заявку зараз, передзвонимо найближчим часом</h1>
+      </div>
+
+      <div class="right-mod-ord">
+
+        <button class="btn-form-ord" type="button" name="button" data-modal="contact-modal"> Залишити заявку </button>
+      </div>
+
+    </div>
+
+
+  </div>
+      {% endblock content %}
+
+
+        <div class="modal" id="contact-modal">
+      <div class="modal-content">
+        <div class="m-form">
+ <form action="{% url 'make_order' %}" method="POST">
+          {% csrf_token %}
+          <button class="mod-but"type="button">
+    <img src="https://img.icons8.com/ios-glyphs/60/ffffff/multiply.png"/>
+    </button>
+    <button class="mod2-but"type="button">
+    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/multiply.png"/>
+    </button>
+          <div class="mod-r-top-text">
+            <p class="p-t">і з вами зв'яжеться</p>
+          <h1 class="t-t">Напишіть нам</h1>
+           <p class="p-t">наш менеджер</p>
+          </div>
+          <div class="r-form">
+
+            <div class="Wrapper">
+          <div class="Input">
+            <input type="text" id="input" name="name" required class="Input-text" placeholder="Ваше Ім'я ">
+            <label for="input" class="Input-label">Ім'я</label>
+          </div>
+        </div>
+        <div class="Wrapper">
+      <div class="Input">
+        <input type="text" id="phone3" name="phone" class="Input-text" placeholder="Ваш номер телефона ">
+        <label for="input" class="Input-label">Номер телефона</label>
+      </div>
+
+    </div>
+    <div class="Wrapper">
+    <div class="Input">
+    <input type="text" id="input" name="comment" class="Input-text" placeholder="Додаткові коментарі ">
+    <label for="input" class="Input-label">Коментарі</label>
+    </div>
+    </div>
+
+               </div>
+          <div class="r-btn">
+              <button class="btn-ord" type="submit" name="button">Надіслати </button>
+    <p class='w-t'>*Натискаючи на кнопку,
+     Ви даєте згоду на обробку персональних
+     даних та погоджуєтеся з політикою конфіденційності.</p>
+          </div>
+    </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+<footer class="footer">
+  <div style="padding-top:45px;padding-bottom:45px;background-color:#000000; " data-record-type="144" data-bg-color="#000000">
+
+      <div style="color:#ffffff;"><h1>© 2021 Buyright Inc</h1>
+          <h1>Всі права застережені</h1>
+          <p>м.Коломия</p>
+          <p>вул.Шевченка 21/2</p>
+          <p class="tel-footer"><a class='tel-link' href="tel:+380507151254">+38 (050) 715 12 54</a></p>
+
+      </div>
+
+  </div>
+</footer>
+
+
+
+  <!-- JS -->
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'js/slider2.js' %}"></script>
+    <script src="{% static 'js/tick.js' %}"></script>
+    <script src="{% static 'js/slider3.js' %}"></script>
+    <script src="{% static 'js/pagination.js' %}"></script>
+
+
+    <script>
+    $(function(){
+      $("#phone1").mask("+380 (99) 999-99-99");
+    });
+
+    </script>
+
+    <script>
+    $(function(){
+      $("#phone2").mask("+380 (99) 999-99-99");
+    });
+
+    </script>
+
+    <script>
+    $(function(){
+      $("#phone3").mask("+380 (99) 999-99-99");
+    });
+    </script>
+
+</body>
+</html>

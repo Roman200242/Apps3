@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="desc-one">
+  <h4>{{ product.title }}</h4>
+</div>
+<div class="top-div">
+
+
+<div class="slider2">
+  <div class="slider__wrapper">
+    <div class="slider__items">
+
+<!--{% for gallery in images %}-->
+<!--      <div class="slider__item2">-->
+<!--        <div class="top-gallery">-->
+
+<!--                      <img class="car-photo-auto" src="{{ gallery.image.url }}" alt="уауцауац">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--   {% endfor %}-->
+
+      <div class="slider__item2">
+        <div class="top-gallery">
+
+                      <img class="photo-gal" src="{{ product.image1.url }}" alt="Зображення {{ product.title }}">
+        </div>
+      </div>
+              <div class="slider__item2">
+        <div class="top-gallery">
+
+                      <img class="photo-gal" src="{{ product.image2.url }}" alt="Зображення {{ product.title }}">
+        </div>
+      </div>
+              <div class="slider__item2">
+        <div class="top-gallery">
+
+                      <img class="photo-gal" src="{{ product.image3.url }}" alt="Зображення {{ product.title }}">
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <a class="slider__control slider__control_prev" href="#" role="button"></a>
+  <a class="slider__control slider__control_next slider__control_show" href="#" role="button"></a>
+</div>
+
+<div class="desc-two">
+    <div class="container-text-services-desc">
+        Послуга " {{ product.services }}"
+    </div>
+ {% include 'Car_specifications.html'%}
+
+</div>
+</div>
+
+<div class="desc-three">
+
+<div class="plus">
+  <img class='auto-select-logo' src="{% static 'images/good-icon.webp' %}"> Переваги
+  <ul class="min-plus">
+  <li>
+     {{ product.plus }}
+
+
+
+    </li>
+    </ul>
+</div>
+
+<div class="minus">
+  <img class='auto-select-logo' src="{% static 'images/bad-icon.webp' %}"> Недоліки
+  <ul class="min-plus">
+  <li>
+     {{ product.minus }}
+    </li>
+    </ul>
+    <div class="p-none">
+  <img class='auto-select-logo-price' src="{% static 'images/cash-icon-1.png' %}">
+
+
+     {{ product.price }}
+    </div>
+</div>
+</div>
+<div class="desc-four ">
+  <img class='auto-select-logo-price' src="{% static 'images/cash-icon-1.png' %}">
+
+
+     {{ product.price }}
+
+</div>
+<div class="button-select-div">
+
+    <a href="/"><button class="btn-desc" type="button" name="button"> На головну </button></a>
+  <button class="btn-desc" type="button" name="button" data-modal="contact-modal"> Написати </button>
+</div>
+
+{% endblock content %}
+

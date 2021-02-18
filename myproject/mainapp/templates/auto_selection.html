@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="top-text" >
+    Перевірені нами авто
+    </div>
+    <div  class="container-car " >
+                {% for product in products %}
+    <div class="slid">
+
+              <div data-num={{product.id}} class="container-photo-car">
+              <a  href="{{ product.get_absolute_url }}"><img class="car-photo-auto" src="{{ product.images.url }}" alt=""></a>
+
+                  <div class="card-body">
+                  <a href="{{ product.get_absolute_url }}"><h4 class="card-title">
+                  <a  class='link-car' href="{{ product.get_absolute_url }}">{{ product.title }} </a>
+                </h4>
+                   </a>
+              </div>
+
+          </div>
+
+          </div>
+            {% endfor %}
+
+    </div>
+
+<div class="div-pag">
+  <span class="pag-block dod">
+    <
+    </span>
+
+  <div class="paginator" onclick="pagination(event)">
+
+  </div>
+
+  <span class="pag-block dod">
+    >
+  </span>
+</div>
+
+
+{% endblock content %}
+
+
+

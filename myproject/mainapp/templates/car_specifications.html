@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul class="img-desc">
+      <li class="desc-li-item">
+        <img class='auto-select-logo' src="{% static 'images/desc1.png' %} ">
+Рік випуску : {{product.years}}
+      </li>
+      <li class="desc-li-item">
+        <img class='auto-select-logo' src="{% static 'images/desc2.png' %} ">
+ Пробіг : {{product.run}} км
+      </li>
+        <li class="desc-li-item">
+        <img class='auto-select-logo' src="{% static 'images/desc3.png' %} ">
+  Двигун: {{product.engine}}
+      </li>
+      <li class="desc-li-item">
+        <img class='auto-select-logo' src="{% static 'images/desc4.png' %} ">
+  КПП: {{product.kpp }}
+      </li>
+      </ul>
+</body>
+</html>

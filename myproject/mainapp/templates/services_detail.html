@@ -1,0 +1,104 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-serv-page">
+   <div class="serv-page-top-text">
+  <div class="serv-page-img">
+    <img class="serv-page-img" src="{{ services.images.url }}" alt="">
+  </div>
+  <div class="serv-page-right-text">
+
+
+<div class="s-t-m">
+  <h1 class="serv-top-text">
+{{ services.title }}
+  </h1>
+</div>
+<div class="s-t-b">
+  <h1 class="serv-mid-text">
+{{ services.services_desc }}
+  </h1>
+</div>
+<div class="s-t-p">
+  <h1 class="serv-b-text">
+{{ services.price }} грн
+  </h1>
+</div>
+<div class="s-t-button">
+  <button class="btn-serv-ored" type="submit" name="button" data-modal="contact-modal">Замовити </button>
+
+</div>
+  </div>
+   </div>
+
+   <div class="desc-serv-page">
+  <div class="desc-t-l">
+    <h1 class="point-main">
+  В перевірку входить:
+    </h1>
+  <h1 class="desc-serv-page-point">
+{{ services.services }}
+
+  </h1>
+  </div>
+  <div class="desc-t-r">
+
+  </div>
+
+   </div>
+   <div class="include-serv-serv">
+     <div class="container-text-inc">
+   Всі послуги включають в себе
+     </div>
+     <div class="container-inc">
+       <div class="inc-content">
+         <div class="inc-img-serv">
+       <img class="inc-logo" src="{% static 'images/serv1.png' %}" alt="">
+         </div>
+         <div class="inc-text">
+           <p class="ser-p">Ходова</p>
+            <p class="ser-p">500 грн</p>
+           Перевірка підвіски автомобіля, огляд дна автомобіля.
+
+
+         </div>
+       </div>
+       <div class="inc-content">
+         <div class="inc-img-serv">
+       <img class="inc-logo" src="{% static 'images/serv2.png' %}" alt="">
+         </div>
+         <div class="inc-text">
+           <p class="ser-p">Розвал-сходження</p>
+            <p class="ser-p">500 грн</p>
+        Перевірка кутів розвалу, кастера та сходженя.
+
+         </div>
+       </div>
+       <div class="inc-content">
+         <div class="inc-img-serv">
+       <img class="inc-logo" src="{% static 'images/serv3.png' %}" alt="">
+         </div>
+         <div class="inc-text">
+           <p class="ser-p">Компресія</p>
+            <p class="ser-p">від 500 грн</p>
+        Замір компресії у всіх циліндрах двигуна.
+
+         </div>
+       </div>
+       <div class="inc-content">
+         <div class="inc-img-serv">
+       <img class="inc-logo" src="{% static 'images/serv4.png' %}" alt="">
+         </div>
+         <div class="inc-text">
+           <p class="ser-p">Ендоскопія</p>
+            <p class="ser-p">від 500 грн</p>
+        Огляд циліндрів двигуна на предмет задирів.
+
+         </div>
+       </div>
+    </div>
+   </div>
+
+</div>
+{% endblock content %}

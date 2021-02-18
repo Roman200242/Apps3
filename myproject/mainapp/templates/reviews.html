@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+
+    <title>Autoselection </title>
+</head>
+<body>
+
+  <div class="page">
+    <!-- Header -->  <!-- Main -->
+
+    <div class="top-text" >
+
+    Перевірені нами авто
+    </div>
+
+    <div  class="container-car " >
+    <div class="slid">
+        {% for product in products %}
+          <div class="container-photo-car" >
+              <a  href="{{ product.get_absolute_url }}"><img class="car-photo-auto" src="{{ product.image.url }}" alt=""></a>
+
+                  <div class="card-body">
+                  <a href="{{ product.get_absolute_url }}"><h4 class="card-title">
+                  <a  class='link-car' href="{{ product.get_absolute_url }}">{{ product.title }} </a>
+                </h4>
+                   </a>
+              </div>
+
+          </div>
+    {% endfor %}
+          </div>
+    </div>
+
+
+  </div>
+{% endblock content %}
+  <!-- JS -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

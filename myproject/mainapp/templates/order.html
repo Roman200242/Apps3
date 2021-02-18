@@ -1,0 +1,13 @@
+{% block content %}
+
+<div class="modal-body">
+       <form action="{% url 'make_order' %}" method="POST">
+             {% csrf_token %}
+
+            <input type="text" name='name' id="input" class="Input-text" placeholder="Додаткові коментарі ">
+            <input type="text" name='phone' id="phone1" class="Input-text" placeholder="Ваш номер телефона ">
+              <input type="text" name='comment' id="input" class="Input-text" placeholder="Ваше Ім'я ">
+             <input type="submit" class="btn btn-success btn-block mb-3" value ="Оформити замовлення">
+        </form>
+      </div>
+{%endblock content%}
